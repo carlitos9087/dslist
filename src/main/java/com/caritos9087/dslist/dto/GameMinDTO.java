@@ -1,6 +1,7 @@
 package com.caritos9087.dslist.dto;
 
 import com.caritos9087.dslist.entities.Game;
+import com.caritos9087.dslist.projections.GameMinProjection;
 
 public class GameMinDTO {
 	
@@ -23,6 +24,16 @@ public GameMinDTO(Game entity) {
 	imgUrl = entity.getImgUrl();
 	shortDescription = entity.getShortDescription();
 }
+
+public GameMinDTO(GameMinProjection projection) {
+	super();
+	id = projection.getId();
+	title = projection.getTitle();
+	year = projection.getYear();
+	imgUrl = projection.getImgUrl();
+	shortDescription = projection.getShortDescription();
+}
+
 
 public Long getId() {
 	return id;
